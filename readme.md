@@ -55,6 +55,11 @@ Aplikacja czyta `POSTGRES_PASSWORD` w tej kolejności:
 1. zmienna środowiskowa `POSTGRES_PASSWORD`,
 2. parametr JVM `-DPOSTGRES_PASSWORD=...` podany przy uruchamianiu programu.
 
+Jeśli nie chcesz używać pliku `.env`, możesz uruchomić aplikację bezpośrednio z hasłem podanym w terminalu:
+```bash
+POSTGRES_PASSWORD=YourPasswordHere mvn -q exec:java -Dexec.mainClass=com.example.library.app.Main
+```
+
 Jeśli uruchamiasz z terminala, możesz zrobić na przykład:
 ```bash
 POSTGRES_PASSWORD=YourPasswordHere mvn -q exec:java -Dexec.mainClass=com.example.library.app.Main
