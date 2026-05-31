@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.library.model;
 
 public class Book {
 
@@ -8,6 +8,13 @@ public class Book {
     private String isbn;
 
     public Book() {
+    }
+
+    public Book(Long id, String title, String author, String isbn) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
     }
 
     public Book(String title, String author, String isbn) {
@@ -46,5 +53,11 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    @Override
+    public String toString() {
+        String idPart = id == null ? "nowa" : String.valueOf(id);
+        return "Ksiazka #" + idPart + ": " + title + " — " + author + " (ISBN: " + isbn + ")";
     }
 }
